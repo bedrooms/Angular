@@ -1,0 +1,64 @@
+    <div>
+        &nbsp;
+    </div>
+    <!-- Main -->
+    <section id="main" class="wrapper">
+        <div class="container">
+            <header class="major">
+                <h2>Jobs we offer</h2>
+                <p>Lorem ipsum dolor sit amet nullam id egestas urna aliquam</p>
+            </header>
+            <section>              
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Job Title</th>
+                                <th>Description</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="au in jobs">
+                                <td ng-model="data.model">{{au.JobTitleName}}</td>
+                                <td>{{au.Responsabilies}}</td>
+                                <td>
+                                    <a class="button small" data-toggle="modal" data-target="#myModal" ng-click="prefs = 2">Apply</a>
+                                </td>                               
+                            </tr>
+                        </tbody>                      
+                    </table>
+                </div>  
+            </section>
+        </div>
+    </section>
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+         <div class="vertical-alignment-helper">
+        <div class="modal-dialog vertical-align-center">
+        <!-- Modal content-->
+        
+        <div class="modal-content-dialog">
+            <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">{{jobs[2].JobTitleName}}{{data.model}}</h4>
+            </div>
+            <div class="modal-body">
+            <h1>Resposabilities:</h1>
+            <p>{{jobs[2].Responsabilies}}</p>
+            <h1>Experience:</h1>
+            <p>{{jobs[2].Experience}}</p>
+             <h1>Industry:</h1>
+            <p>{{jobs[2].Industry}}</p>
+             <h1>Employment Type:</h1>
+            <p>{{jobs[2].EmploymentTypeName}}</p>
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.Click()">Close</button>
+            </div>
+      
+         </div>
+          </div>
+
+        </div>
+    </div>

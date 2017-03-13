@@ -17,7 +17,9 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngTouch',
-    'ui.router'
+    'ui.router',
+    'ngMaterial',
+    'ngMessages'
   ])
   // .config(function ($routeProvider, $locationProvider) {
   //   $routeProvider
@@ -57,6 +59,13 @@ angular
              url: '/about',           
             templateUrl: 'views/about.html',
             controller: 'AboutCtrl as vm'
+           
+        })
+
+        .state('Jobs', {
+             url: '/Jobs',           
+            templateUrl: 'views/Jobs.html',
+            controller: 'JobsCtrl as vmJobs'
            
         });
 

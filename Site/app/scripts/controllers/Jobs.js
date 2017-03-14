@@ -1,3 +1,5 @@
+'use strict';
+
 var app = angular.module('testAngularSiteApp', '');
 
 app.controller('JobsCtrl',function ($scope, $rootScope, $http, $mdDialog)

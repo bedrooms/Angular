@@ -9,7 +9,6 @@
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
-    <link rel="stylesheet" href="bower_components/angular-material/angular-material.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
@@ -18,7 +17,7 @@
     <link rel="stylesheet" href="styles/style.css" />
     <link rel="stylesheet" href="styles/style-xlarge.css" />
     <link rel="stylesheet" href="styles/dialogs.css" />
-    <base href="/app">
+    <base href="/">
     <!-- endbuild -->
   </head>
   <body class="landing" ng-app="testAngularSiteApp">
@@ -29,10 +28,10 @@
     <!-- Add your site or application content here -->
     <div>
       <header id="header">
-				<h1><a href="index.html">HR Staffing</a></h1>
+				<h1><a ui-sref="main">HR Staffing</a></h1>
           <nav id="nav">
               <ul>
-                  <li><a href="index.html">Home</a></li>
+                  <li><a ui-sref="main">Home</a></li>
                   <li><a ui-sref="Jobs">Jobs</a></li>
                   <li><a href="elements.html">Organization</a></li>
                   <li><a href="#" class="button special">Sign Up</a></li>
@@ -41,7 +40,10 @@
 			</header>
     </div>
     <div>
-    <ui-view></ui-view>
+        &nbsp;
+    </div>
+    <div>     
+      <ui-view></ui-view>
     </div>   
      <footer id="footer">
 				<div class="container">
@@ -136,16 +138,17 @@
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="bower_components/angular-touch/angular-touch.js"></script>
     <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
-    <script src="bower_components/angular-aria/angular-aria.js"></script>
-    <script src="bower_components/angular-material/angular-material.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-filter/0.5.8/angular-filter.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/app.js"></script>
+        <script src="scripts/Services.js"></script>
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/controllers/Jobs.js"></script>
-        <script src="scripts/controllers/about.js"></script>
+        <script src="scripts/controllers/positionsOffer.js"></script>
+        <script src="scripts/controllers/about.js"></script>        
         <!-- endbuild -->
 </body>
 </html>

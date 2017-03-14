@@ -16,7 +16,9 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ui.router'
+    'ui.router',
+    'app.services',
+    'angular.filter'
   ])
   // .config(function ($routeProvider, $locationProvider) {
   //   $routeProvider
@@ -47,27 +49,27 @@ angular
         .state('main', {
             url: '/main',         
             templateUrl: 'views/main.html',
-            controller: 'MainCtrl as vm'
-           
+            controller: 'MainCtrl as vm'           
         })
         
         // ABOUT PAGE AND MULTIPLE NAMED VIEWS =================================
         .state('about', {
              url: '/about',           
             templateUrl: 'views/about.html',
-            controller: 'AboutCtrl as vm'
-           
+            controller: 'AboutCtrl as vm'           
         })
 
         .state('Jobs', {
              url: '/Jobs',           
             templateUrl: 'views/Jobs.html',
-            controller: 'JobsCtrl as vmJobs'
-           
-        });
+            controller: 'JobsCtrl as vm'           
+        })
 
-        
-        
+        .state('PositionsOffer', {
+             url: '/positionsOffer',           
+            templateUrl: 'views/positionsOffer.html',
+            controller: 'positionsOfferCtrl as vm'           
+        });
 });
 
 

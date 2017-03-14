@@ -1,29 +1,30 @@
-'use strict';
 
 (function () {
 
-angular.module('testAngularSiteApp', [])
+angular.module('app.services', [])
 .service('Myserv', Myserv);
 
 Myserv.$inject = ['$http'];
 
 function Myserv($http) {
     var service = {
-        getInfo: getInfo
+        getInfo: getInfo,
+        getpositionsOffer : getpositionsOffer
     };
 
-return service;
-    function getInfo() {
-        return $http({
-method:'GET',
-params:{
-
-},
-url:''
-        });
+        return service;
+            function getInfo() {
+                return $http({
+                method:'GET',
+                url:'http://localhost:54491/HRAPISevice.svc/GetJobsOffer'
+                        });
+                    }
+       
+            function getpositionsOffer() {
+                return $http({
+                method:'GET',
+                url:'http://localhost:54491/HRAPISevice.svc/GetPositionsOffer'
+                        });
+                    }
     }
-}
-
-
-
 })();

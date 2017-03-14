@@ -19,11 +19,11 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr ng-repeat="au in jobs">
+                            <tr ng-repeat="au in vm.jobs">
                                 <td ng-model="data.model">{{au.JobTitleName}}</td>
                                 <td>{{au.Responsabilies}}</td>
                                 <td>
-                                    <a class="button small" data-toggle="modal" data-target="#myModal" ng-click="prefs = 2">Apply</a>
+                                    <a class="button small" data-toggle="modal" data-target="#myModal" ng-click="vm.selectJob($index)">Apply</a>
                                 </td>                               
                             </tr>
                         </tbody>                      
@@ -41,17 +41,17 @@
         <div class="modal-content-dialog">
             <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal">&times;</button>
-            <h4 class="modal-title">{{jobs[2].JobTitleName}}{{data.model}}</h4>
+            <h4 class="modal-title">{{vm.selectedJob.JobTitleName}}</h4>
             </div>
             <div class="modal-body">
             <h1>Resposabilities:</h1>
-            <p>{{jobs[2].Responsabilies}}</p>
+            <p>{{vm.selectedJob.Responsabilies}}</p>
             <h1>Experience:</h1>
-            <p>{{jobs[2].Experience}}</p>
+            <p>{{vm.selectedJob.Experience}}</p>
              <h1>Industry:</h1>
-            <p>{{jobs[2].Industry}}</p>
+            <p>{{vm.selectedJob.Industry}}</p>
              <h1>Employment Type:</h1>
-            <p>{{jobs[2].EmploymentTypeName}}</p>
+            <p>{{vm.selectedJob.EmploymentTypeName}}</p>
             </div>
             <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.Click()">Close</button>

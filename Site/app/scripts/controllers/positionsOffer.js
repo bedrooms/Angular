@@ -5,7 +5,7 @@ app.controller('positionsOfferCtrl',['$scope','Myserv' , function ($scope, Myser
   var vm = this;
 
   Myserv.getpositionsOffer().then(function(response){
-    vm.positionsOffer = response.data.getAllPositionsOfferResult;
+    vm.positionsOffer = response.data.getAllPositionsOfferResult;  
   });  
   
 }]);

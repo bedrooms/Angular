@@ -1,0 +1,17 @@
+#top-image {
+background:url('../images/HR Logo.JPG') -25px -50px;
+position:absolute ;
+top:0;
+width:100%;
+z-index:0;
+  height:100%;
+  background-size: calc(100% + 50px);
+}
+.titeUC{
+  position: absolute;
+  bottom: 25px;
+  color:lightslategray
+}
+
+/*http://il2.picdn.net/shutterstock/videos/7830199/thumb/1.jpg*/
+/*https://cdn.shutterstock.com/shutterstock/videos/20311036/thumb/1.jpg*/

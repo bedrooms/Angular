@@ -16,14 +16,14 @@ function Myserv($http) {
             function getInfo() {
                 return $http({
                 method:'GET',
-                url:'http://localhost:54491/HRAPISevice.svc/GetJobsOffer'
+                url:'http://181.54.45.243/HRStaffingService/HRAPISevice.svc/GetJobsOffer'
                         });
                     }
        
             function getpositionsOffer() {
                 return $http({
                 method:'GET',
-                url:'http://localhost:54491/HRAPISevice.svc/GetPositionsOffer'
+                url:'http://181.54.45.243/HRStaffingService/HRAPISevice.svc/GetPositionsOffer'
                         });
                     }
     }

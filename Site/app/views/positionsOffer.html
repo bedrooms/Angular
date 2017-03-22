@@ -1,29 +1,29 @@
 <div>
     &nbsp;
 </div>
-<div>
-    &nbsp;
-</div>
-<div>
-    &nbsp;
-</div>
-<div>
-    &nbsp;
-</div>
-<section>              
-    <div class="table-wrapper" >
-         <div></div>
-         <div>
-            <table ng-repeat="au in vm.positionsOffer | groupBy: JobTitleIndustryName">
-                <thead>                
-                        <th>{{au.JobTitleIndustryName}}</th> 
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>{{au.JobTitle}}</td>
-                    </tr>
-                </tbody>                      
-            </table>
+ <section id="main" class="wrapper style1 special">
+     <div class="container" >
+          <header class="major">
+                <h2>Staffing Services</h2>
+                <p>Lorem ipsum dolor sit amet nullam id egestas urna aliquam</p>
+            </header>
+     </div>
+        <section class="wrapper style1 special" style="width: 65%;margin: auto;">        
+        <div  class="row">      
+        <div ng-repeat="au in vm.positionsOffer">
+            <section class="box"> 
+            <i class="icon big  {{vm.class}}"></i>
+            <div>&nbsp;</div>
+            <div>
+                <h3>{{au.Key}}</h3>
+            </div>
+            <div ng-repeat="val in au.Value">                  
+                <a>{{val.JobTitle}}</a>  
+            </div>
+            </section>
+        </div> 
+        
         </div>
-    </div>  
-</section>
+    </section>
+
+</section>       

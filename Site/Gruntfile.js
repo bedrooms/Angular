@@ -64,7 +64,14 @@ module.exports = function (grunt) {
           '.tmp/styles/{,*/}*.css',
           '<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
         ]
-      }
+      },
+      /*embedFonts: {
+        all: {
+          files: {
+            'dist/css/style.css': ['src/css/style.css']
+          }
+        }
+      }*/
     },
 
     // The actual grunt server settings
@@ -466,6 +473,7 @@ module.exports = function (grunt) {
     'concat',
     'ngAnnotate',
     'copy:dist',
+    'copy:styles',
     'cdnify',
     'cssmin',
     'uglify',

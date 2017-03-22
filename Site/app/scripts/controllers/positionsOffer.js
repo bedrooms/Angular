@@ -6,6 +6,8 @@ app.controller('positionsOfferCtrl',['$scope','Myserv' , function ($scope, Myser
 
   Myserv.getpositionsOffer().then(function(response){
     vm.positionsOffer = response.data.getAllPositionsOfferResult;  
+
+    vm.class = "fa-desktop fa-5x";
   });  
   
 }]);

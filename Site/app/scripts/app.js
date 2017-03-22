@@ -18,7 +18,7 @@ angular
     'ngSanitize',
     'ui.router',
     'app.services',
-    'angular.filter'
+    'ngMap'
   ])
   // .config(function ($routeProvider, $locationProvider) {
   //   $routeProvider
@@ -69,6 +69,12 @@ angular
              url: '/positionsOffer',           
             templateUrl: 'views/positionsOffer.html',
             controller: 'positionsOfferCtrl as vm'           
+        })
+
+         .state('locations', {
+             url: '/locations',           
+            templateUrl: 'views/locations.html',
+            controller: 'locationsCtrl as vm'           
         });
 });
 

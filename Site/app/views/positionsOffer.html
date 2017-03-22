@@ -9,20 +9,19 @@
             </header>
      </div>
         <section class="wrapper style1 special" style="width: 65%;margin: auto;">        
-        <div  class="row">      
-        <div ng-repeat="au in vm.positionsOffer">
-            <section class="box"> 
-            <i class="icon big  {{vm.class}}"></i>
-            <div>&nbsp;</div>
-            <div>
-                <h3>{{au.Key}}</h3>
-            </div>
-            <div ng-repeat="val in au.Value">                  
-                <a>{{val.JobTitle}}</a>  
-            </div>
-            </section>
-        </div> 
-        
+        <div  class="row" style="height: 80%">           
+            <div class="col-3" ng-repeat="au in vm.positionsOffer">                
+                <div class="box "> 
+                <i class="icon big  {{vm.class}}"></i>
+                <div>&nbsp;</div>
+                <div>
+                    <h3>{{au.Key}}</h3>
+                </div>
+                <div ng-repeat="val in au.Value">                  
+                    <a>{{val.JobTitle}}</a>  
+                </div>
+                </div>           
+            </div>        
         </div>
     </section>
 

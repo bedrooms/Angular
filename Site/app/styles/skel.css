@@ -63,6 +63,10 @@
 		border-bottom: solid 1px transparent;
 	}
 
+	.col {
+		flex: 1; /* additionally, equal width */		
+		}
+
 	.row > * {
 		float: left;
 	}

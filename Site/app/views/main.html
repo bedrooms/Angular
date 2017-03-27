@@ -12,28 +12,14 @@
 				<div class="container">
 					<header class="major">
 						<h2>Our services</h2>
-						<p>Lorem ipsum dolor sit amet, delectus consequatur, similique quia!</p>
+						<p>This is our portafolio services</p>
 					</header>
 					<div class="row 150%">
-						<div class="4u 12u$(medium)">
-							<section class="box">
-								<i class="icon big rounded color1 fa-cloud"></i>
-								<a ui-sref="PositionsOffer"><h3>Staffing Services</h3></a>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim quam consectetur quibusdam magni minus aut modi aliquid.</p>
-							</section>
-						</div>
-						<div class="4u 12u$(medium)">
-							<section class="box">
-								<i class="icon big rounded color9 fa-desktop"></i>
-								<h3>Insurance for your company</h3>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium ullam consequatur repellat debitis maxime.</p>
-							</section>
-						</div>
-						<div class="4u$ 12u$(medium)">
-							<section class="box">
-								<i class="icon big rounded color6 fa-rocket"></i>								
-								<a ui-sref="Jobs"><h3>Jobs</h3></a>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque eaque eveniet, nesciunt molestias. Ipsam, voluptate vero.</p>
+						<div ng-repeat="serv in vm.companyServices" class="4u 12u$(medium)">
+							<section  class="box">
+								<i class="icon big rounded {{serv.ConfgColor}} {{serv.ConfgImage}}"></i>
+								<a ui-sref="{{serv.ConfgRedirectsTo}}"><h3>{{serv.ServiceName}}</h3></a>
+								<p>{{serv.ServiceDescription}}</p>
 							</section>
 						</div>
 					</div>
@@ -45,37 +31,22 @@
 				<div class="container" >
 					<header class="major">
 						<h2>Our team</h2>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio, autem.</p>
+						<p>Our Team is formed on the belief that relationships built on trust are valued by people and businesses alike. </p>
 					</header>
 					<section class="profiles">
 						<div class="row">
-							<section class="3u 6u(medium) 12u$(xsmall) profile">
+							<section ng-repeat="emp in vm.employees" class="3u 6u(medium) 12u$(xsmall) profile">
 								<img src="images/profile_placeholder.gif" alt="" />
-								<h4>{{CEO}}</h4>
-								<p>CEO</p>
-							</section>
-							<section class="3u 6u$(medium) 12u$(xsmall) profile">
-								<img src="images/profile_placeholder.gif" alt="" />
-								<h4>Jessie Rodriguez</h4>
-								<p>Staffing Consultant</p>
-							</section>
-							<section class="3u 6u(medium) 12u$(xsmall) profile">
-								<img src="images/profile_placeholder.gif" alt="" />
-								<h4>Melissa Rodriguez</h4>
-								<p>Insurance Consultant</p>
-							</section>
-							<section class="3u$ 6u$(medium) 12u$(xsmall) profile">
-								<img src="images/profile_placeholder.gif" alt="" />
-								<h4>Jossua</h4>
-								<p>Janitor</p>
+								<h4>{{emp.FirstName}} {{emp.LastName}}</h4>
+								<a><i>{{emp.JobTitleName}}</i></a>								
 							</section>
 						</div>
 					</section>
 					<footer>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam dolore illum, temporibus veritatis eligendi, aliquam, dolor enim itaque veniam aut eaque sequi qui quia vitae pariatur repudiandae ab dignissimos ex!</p>
+						<p>We’re now the preferred industry resource for people seeking rewarding jobs, and businesses seeking people to get jobs done.</p>
 						<ul class="actions">
 							<li>
-								<a href="#" class="button big">Lorem ipsum dolor sit</a>
+								<a href="#" class="button big">Meet our team</a>
 							</li>
 						</ul>
 					</footer>
@@ -87,7 +58,7 @@
 				<div class="container">
 					<header class="major">
 						<h2>Contact us</h2>
-						<p>Lorem ipsum dolor sit amet. Delectus consequatur, similique quia!</p>
+						<p>If you would like further information about how we can help you and your business it would be great to hear from you.</p>
 					</header>
 				</div>
 				<div class="container 50%">

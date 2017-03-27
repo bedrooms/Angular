@@ -8,24 +8,17 @@
  */
 var app = angular.module('testAngularSiteApp', '');
 
-app.controller('MainCtrl',function ()
+app.controller('MainCtrl',['Myserv',function (Myserv)
 {    
-    var vm = this;
-    vm.myInterval = 3000;
-    vm.slides = [
-        {
-        image: 'https://img.grouponcdn.com/deal/5EXVDNMDEe1mtyEK6Pgp/ZC-1057x634/v1/c700x420.jpg'
-        },
-        {
-        image: 'https://img.grouponcdn.com/deal/5EXVDNMDEe1mtyEK6Pgp/ZC-1057x634/v1/c700x420.jpg'
-        },
-        {
-        image: 'https://img.grouponcdn.com/deal/5EXVDNMDEe1mtyEK6Pgp/ZC-1057x634/v1/c700x420.jpg'
-        },
-        {
-        image: 'https://img.grouponcdn.com/deal/5EXVDNMDEe1mtyEK6Pgp/ZC-1057x634/v1/c700x420.jpg'
-        }
-    ];
-   
-});
+    var vm = this; 
+
+      Myserv.getAllEmployees().then(function(response){
+            vm.employees = response.data.getAllEmployeesResult;
+        }); 
+
+      Myserv.getAllCoServices().then(function(response){
+            vm.companyServices = response.data.GetAllCoServicesResult;
+        }); 
+
+}]);
   

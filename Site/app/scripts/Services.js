@@ -11,7 +11,9 @@ var urlEndpoint = 'http://localhost:54491/HRAPISevice.svc/';
 function Myserv($http) {
     var service = {
         getInfo: getInfo,
-        getpositionsOffer : getpositionsOffer
+        getpositionsOffer : getpositionsOffer,
+        getAllEmployees : getAllEmployees,
+        getAllCoServices : getAllCoServices
     };
 
         return service;
@@ -26,6 +28,19 @@ function Myserv($http) {
                 return $http({
                 method:'GET',
                 url: urlEndpoint + 'GetPositionsOffer'
+                        });
+                    }
+
+            function getAllEmployees() {
+                return $http({
+                method:'GET',
+                url: urlEndpoint + 'GetAllEmployees'
+                        });
+                    }
+            function getAllCoServices() {
+                return $http({
+                method:'GET',
+                url: urlEndpoint + 'GetAllCoServices'
                         });
                     }
     }

@@ -4,18 +4,28 @@
  <section id="main" class="wrapper style1 special">
      <div class="container" >
           <header class="major">
-                <h2>Locations</h2>
-                <p>Lorem ipsum dolor sit amet nullam id egestas urna aliquam</p>
+                <h2>Our Location</h2>
+                <p>Information about where we are located, and which counties and cities we service!</p>
             </header>
      </div>
-        <section class="wrapper style1 special" style="width: 65%;margin: auto;">        
-      <div >
-        <div map-lazy-load="https://maps.google.com/maps/api/js" map-lazy-load-params="{{vm.googleMapsUrl}}">
-            <ng-map style="height: 600px;" center="34.221774, -116.253000" zoom="7">
-                <marker tittle="Marker" animation="DROP" position="33.874159, -117.565044" ></marker>
+        <section class="wrapper style1 special" style="width: 65%;margin: auto;"> 
+         <div class="row" map-lazy-load="https://maps.google.com/maps/api/js" map-lazy-load-params="{{vm.googleMapsUrl}}">
+                <div class="box" style="height: 600px; width: 20%"> 
+               <div>
+                    <h3>Corona</h3>
+                </div>
+                <div>                  
+                    <a>
+                        1690 W 6th Street Suite G
+                        Corona, California 92882
+                        United States
+                    </a>  
+                </div>
+           </div>
+            <ng-map style="width: 80%; height: 600px" center="33.877952, -117.598138" zoom="16">
+                <marker tittle="Marker" animation="DROP" position="33.877952, -117.598138" ></marker>
             </ng-map>   
         </div>
-      </div>
     </section>
 
 </section>       

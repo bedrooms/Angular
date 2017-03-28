@@ -75,6 +75,12 @@ angular
              url: '/locations',           
             templateUrl: 'views/locations.html',
             controller: 'locationsCtrl as vm'           
+        })
+
+         .state('Cities', {
+            url: '/Cities',           
+            templateUrl: 'views/citiesServicing.html',
+            controller: 'citiesServicingCtrl as vm'           
         });
 });
 

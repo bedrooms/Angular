@@ -8,9 +8,11 @@
  */
 var app = angular.module('testAngularSiteApp', '');
 
-app.controller('MainCtrl',['Myserv',function (Myserv)
+app.controller('MainCtrl',['Myserv','$rootScope',function (Myserv, $rootScope)
 {    
     var vm = this; 
+    $rootScope.Home = true; 
+    $rootScope.Admin = false; 
 
       Myserv.getAllEmployees().then(function(response){
             vm.employees = response.data.getAllEmployeesResult;
@@ -21,4 +23,3 @@ app.controller('MainCtrl',['Myserv',function (Myserv)
         }); 
 
 }]);
-  

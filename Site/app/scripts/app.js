@@ -81,6 +81,12 @@ angular
             url: '/Cities',           
             templateUrl: 'views/citiesServicing.html',
             controller: 'citiesServicingCtrl as vm'           
+        })
+
+          .state('sessionLogIn', {
+            url: '/sessionLogIn',           
+            templateUrl: 'sessionLogIn.html',
+            controller: 'sessionLogInCtrl as vm'           
         });
 });
 

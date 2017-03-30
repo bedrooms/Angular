@@ -20,39 +20,18 @@ angular
     'app.services',
     'ngMap'
   ])
-  // .config(function ($routeProvider, $locationProvider) {
-  //   $routeProvider
-  //     .when('/', {
-  //       templateUrl: 'app/views/main.html',
-  //       controller: 'MainCtrl',
-  //       controllerAs: 'main'
-  //     })
-  //     .when('/about', {
-  //       templateUrl: 'app/views/about.html',
-  //       controller: 'AboutCtrl',
-  //       controllerAs: 'about'
-  //     })
-  //     .otherwise({
-  //       redirectTo: '/'
-  //     });
-
-  //     $locationProvider.html5Mode(true);
-  // });  
 
   .config(function($stateProvider, $urlRouterProvider,$locationProvider) {
     
     $urlRouterProvider.otherwise('/main');
     
-    $stateProvider
-        
-        // HOME STATES AND NESTED VIEWS ========================================
+    $stateProvider  
         .state('main', {
             url: '/main',         
             templateUrl: 'views/main.html',
             controller: 'MainCtrl as vm'           
         })
-        
-        // ABOUT PAGE AND MULTIPLE NAMED VIEWS =================================
+     
         .state('about', {
              url: '/about',           
             templateUrl: 'views/about.html',
@@ -83,10 +62,27 @@ angular
             controller: 'citiesServicingCtrl as vm'           
         })
 
-          .state('sessionLogIn', {
+        .state('sessionLogIn', {
             url: '/sessionLogIn',           
             templateUrl: 'sessionLogIn.html',
-            controller: 'sessionLogInCtrl as vm'           
+            controller: 'sessionLogInCtrl as vm',
+        })
+
+        .state('adminWelcome', {
+            url: '/adminWelcome',           
+            templateUrl: 'views/adminWelcome.html',
+            controller:'adminWelcomeCtrl as vm',
+             resolve: {
+                    auth: ["$q", "authenticationSvc", function($q, authenticationSvc) {
+                    var userInfo = authenticationSvc.getUserInfo();
+
+                    if (userInfo) {
+                        return $q.when(userInfo);
+                    } else {
+                        return $q.reject({ authenticated: false });
+                    }
+                    }]           
+        }            
         });
 });
 

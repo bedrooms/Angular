@@ -13,6 +13,9 @@ app.controller('MainCtrl',['Myserv','$rootScope',function (Myserv, $rootScope)
     var vm = this; 
     $rootScope.Home = true; 
     $rootScope.Admin = false; 
+    $rootScope.footerTmpl = true; 
+    $rootScope.footerAdmin = false; 
+
 
       Myserv.getAllEmployees().then(function(response){
             vm.employees = response.data.getAllEmployeesResult;

@@ -5,9 +5,9 @@
 		</div>
 		<br>
 		<div class="login">
-				<input type="text" placeholder="username" name="user"><br>
-				<input type="password" placeholder="password" name="password"><br>
-				<input type="button" value="Login">
+				<input ng-model="userName" type="text" placeholder="username" name="user"><br>
+				<input ng-model="password" type="password" placeholder="password" name="password"><br>
+				<input type="button" value="Login" ng-click="vm.loggedUser(userName, password)" >
 		</div>
  </div>
 

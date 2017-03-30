@@ -7,25 +7,38 @@ app.factory("authenticationSvc", function($http, $q, $window) {
     return userInfo;
   }
 
-  function login(userName, password) {
-    var deferred = $q.defer();
-
-    $http.post("http://hr-staff.com/HRSService/HRAPISevice.svc/GetAllEmployees"//, {
-     // userName: userName,
-     // password: password
-    ).then(function(result) {
-      userInfo = {
-        accessToken: result.data.access_token,
-        userName: result.data.userName
+function login(userName, password) {
+  var deferred = $q.defer();
+  
+    $http({
+           method: 'GET',
+        url: 'http://localhost:54491/HRAPISevice.svc/GetLoginUser/',
+        params:{
+             userName: userName,
+              password: password
+        }
+    })
+    .then(function(response) {
+       userInfo = {
+        lastSession: response.data.GetLoginUserAuthResult.LastSession,
+        userMail: response.data.GetLoginUserAuthResult.Email,
+        loginSuccess : response.data.GetLoginUserAuthResult.LoggedSuccess
       };
       $window.sessionStorage["userInfo"] = JSON.stringify(userInfo);
       deferred.resolve(userInfo);
-    }, function(error) {
-      deferred.reject(error);
+    }, 
+    function(response) { // optional
+       deferred.reject(error);
     });
 
-    return deferred.promise;
-  }
+     return deferred.promise;
+}
+
+
+
+   
+  
+  
 
   return {
     login: login,

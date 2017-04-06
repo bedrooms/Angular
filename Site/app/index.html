@@ -18,6 +18,15 @@
     <link rel="stylesheet" href="styles/style.css" />
     <link rel="stylesheet" href="styles/style-xlarge.css" />
     <link rel="stylesheet" href="styles/dialogs.css" />
+    <link rel="stylesheet"  href="styles/main/jcarousel.basic.css">
+    <link rel="stylesheet" type="text/css" href="styles/main/stylecarousel.css">
+     <style>
+        .carousel-inner > .item > img,
+        .carousel-inner > .item > a > img {
+        width: 100%;
+        margin: auto;
+      }
+      </style>
     <!-- endbuild -->
   </head>
   <body class="landing" ng-app="testAngularSiteApp">
@@ -43,9 +52,6 @@
               </ul>
           </nav>
 			</header>
-    </div>
-    <div>
-        &nbsp;
     </div>
     <div>     
       <ui-view></ui-view>
@@ -132,6 +138,9 @@
     <script src="js/skel.min.js"></script>  
     <script src="js/skel-layers.min.js"></script>
 		<script src="js/init.js"></script>  
+      <script type="text/javascript" src="js/main/dist/jquery.js"></script>
+    <script type="text/javascript" src="js/main/dist/jquery.jcarousel.min.js"></script>
+    <script type="text/javascript" src="js/main/jcarousel.basic.js"></script>
     <!-- endbuild -->
 </body>
 </html>

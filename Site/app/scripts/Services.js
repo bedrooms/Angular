@@ -6,7 +6,7 @@ angular.module('app.services', [])
 
 Myserv.$inject = ['$http'];
 //var urlEndpoint = 'http://181.54.45.243/HRStaffingService/HRAPISevice.svc/';
-var urlEndpoint = 'http://localhost:54491/HRAPISevice.svc/';
+var urlEndpoint = 'http://50.63.165.189/HRSService/HRAPISevice.svc/';
 
 function Myserv($http) {
     var service = {

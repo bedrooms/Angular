@@ -1,7 +1,7 @@
 
 var app = angular.module('testAngularSiteApp', '');
 
-app.controller('JobsCtrl',['$scope','Myserv' , function ($scope, Myserv)
+app.controller('JobsCtrl',['$scope','Myserv','$location' , function ($scope, Myserv, $location)
 {   
   var vm = this;
 
@@ -11,6 +11,10 @@ app.controller('JobsCtrl',['$scope','Myserv' , function ($scope, Myserv)
 
   vm.selectJob = function(idJob){
     vm.selectedJob =  vm.jobs[idJob];
+  }
+
+  vm.redirectSubmit = function(){
+    $location.path('submitForm');
   }
 }]);
   

@@ -1,0 +1,50 @@
+<div>
+    &nbsp;
+</div>
+<!-- Form -->
+<section id="main" class="wrapper">
+    <div class="container">
+    <h3>Application form</h3>
+    <form method="post" action="#">
+        <div class="row uniform 50%">
+            <div class="12u$">
+                <input type="text" name="name" id="name" value="" placeholder="Name" />
+            </div>
+            <div class="8u$ 12u$">
+                <input type="email" name="email" id="email" value="" placeholder="Email" />
+            </div>
+            <div class="6u$ 12u$">
+                <input type="text" name="phone" id="phone" value="" placeholder="Phone Number" />
+            </div>
+            <div class="6u 12u$(2)">
+                <div class="select-wrapper">
+                    <select name="state" id="state" ng-model="selectedItem" ng-options="item as item.name for item in vm.statesUS" ng-change="vm.getFilterCities(selectedItem.name)">                   
+                        <option value="">- State -</option>
+                    </select>
+                </div>
+            </div>
+            <div class="6u 12u$(2)">
+                 <select name="city" id="city">
+                    <option value="">- City -</option>
+                    <option ng-repeat="c in vm.filterCities" value="{{c.rank}}">{{c.city}}</option>
+                </select>
+            </div>
+
+            <div class="6u$ 12u$(3)">
+                <input type="checkbox" id="human" name="human" checked>
+                <label for="human">I am a human and not a robot</label>
+            </div>
+            <div class="12u$">
+                <textarea name="message" id="message" placeholder="Copy your resume (optional)" rows="6"></textarea>
+            </div>
+            <div class="12u$">
+                <ul class="actions">
+                    <li><input type="submit" value="Send Message" class="special" /></li>
+                    <li><input type="reset" value="Reset" /></li>                   
+                    <a ui-sref="Jobs" class="button alt">Cancel</a>
+                </ul>
+            </div>
+        </div>
+    </form>
+    </div>
+</section>

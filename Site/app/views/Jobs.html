@@ -8,9 +8,9 @@
                 <h2>Jobs we offer</h2>
                 <p>Find the job that you have been waiting with just a simple search.</p>
             </header>
-            <section>              
-                <div class="table-wrapper">
-                    <table>
+            <section>                              
+                <div ng-show="vm.jobs.length" class="table-wrapper" >                   
+                    <table >
                         <thead>
                             <tr>
                                 <th>Job Title</th>
@@ -19,16 +19,19 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr ng-repeat="au in vm.jobs">
+                            <tr ng-repeat="au in vm.jobs">    
+                                                       
                                 <td ng-model="data.model">{{au.JobTitleName}}</td>
                                 <td>{{au.Responsabilies}}</td>
                                 <td>
-                                    <a class="button small" data-toggle="modal" data-target="#myModal" ng-click="vm.selectJob($index)">Apply</a>
+                                    <a class="button small" data-toggle="modal" data-target="#myModal" ng-click="vm.selectJob($index)">More...</a>
                                 </td>                               
                             </tr>
+                            
                         </tbody>                      
                     </table>
                 </div>  
+                <li ng-show="!vm.jobs.length">No jobs available!</li>    
             </section>
         </div>
     </section>
@@ -54,7 +57,7 @@
             <p>{{vm.selectedJob.EmploymentTypeName}}</p>
             </div>
             <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.Click()">Close</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.redirectSubmit()">Apply</button>
             </div>
       
          </div>

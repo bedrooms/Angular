@@ -37,18 +37,16 @@
     <!-- Add your site or application content here -->
     <div>
       <header id="header">
-				<h1>
-          <a ng-if="Admin" ui-sref="main">HR Staffing | Admin Web Page Console</a>
-          <a ng-if="Home" ui-sref="main">HR Staffing</a>
+				<h1>      
+          <a ui-sref="main">HR Staffing</a>
         </h1>
           <nav id="nav">            
-              <ul ng-if="Home">
+              <ul>
                   <li><a ui-sref="main">Home</a></li>
                   <li><a ui-sref="Jobs">Jobs</a></li>
                   <li><a ui-sref="locations">Find Us</a></li>
-                  <li><a ui-sref="Cities">Cities Servicing</a></li>
-                  <li><a ui-sref="adminWelcome">Admin</a></li>
-                  <li><a ui-sref="sessionLogIn" class="button special">Sign Up</a></li>
+                  <li><a ui-sref="Cities">Servicing Cities</a></li>
+                  <li><a ui-sref="#" class="button special">Sign Up</a></li>
               </ul>
           </nav>
 			</header>
@@ -135,6 +133,7 @@
     <script src="scripts/controllers/citiesServicing.js"></script>  
     <script src="scripts/controllers/sessionLogIn.js"></script>  
     <script src="scripts/controllers/adminWelcome.js"></script>  
+    <script src="scripts/controllers/submitForm.js"></script>  
     <script src="js/skel.min.js"></script>  
     <script src="js/skel-layers.min.js"></script>
 		<script src="js/init.js"></script>  

@@ -62,6 +62,12 @@ angular
             controller: 'citiesServicingCtrl as vm'           
         })
 
+         .state('submitForm', {
+            url: '/submitForm',           
+            templateUrl: 'views/submitForm.html',
+            controller:'submitFormCtrl as vm'        
+        })
+
         .state('sessionLogIn', {
             url: '/sessionLogIn',           
             templateUrl: 'sessionLogIn.html',

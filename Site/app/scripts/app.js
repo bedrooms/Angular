@@ -11,6 +11,7 @@
 angular
   .module('testAngularSiteApp', [
     'ngAnimate',
+    'ngTouch',
     'ngCookies',
     'ngMessages',
     'ngResource',
@@ -18,7 +19,8 @@ angular
     'ngSanitize',
     'ui.router',
     'app.services',
-    'ngMap'
+    'ngMap',
+    'ui.bootstrap'
   ])
 
   .config(function($stateProvider, $urlRouterProvider,$locationProvider) {

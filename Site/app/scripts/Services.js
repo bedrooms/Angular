@@ -7,6 +7,7 @@ angular.module('app.services', [])
 Myserv.$inject = ['$http'];
 //var urlEndpoint = 'http://181.54.45.243/HRStaffingService/HRAPISevice.svc/';
 var urlEndpoint = 'http://50.63.165.189/HRSService/HRAPISevice.svc/';
+var saveResponse;
 
 function Myserv($http) {
     var service = {
@@ -43,5 +44,31 @@ function Myserv($http) {
                 url: urlEndpoint + 'GetAllCoServices'
                         });
                     }
+            function login(name, mail, phone, state, city, resumeCV, idJobOffer) {
+                var deferred = $q.defer();
+                
+                    $http({
+                        method: 'GET',
+                        url: urlEndpoint + 'saveApplication/',
+                        params:{
+                            name: name,
+                            mail: mail,
+                            phone : phone,
+                            state : state,
+                            city : city,
+                            resumeCV : resumeCV,
+                            idJobOffer : idJobOffer
+                        }
+                    })
+                    .then(function(response) {
+                    saveResponse = response.data.GetLoginUserAuthResult.LastSession;
+                    deferred.resolve(saveResponse);
+                    }, 
+                    function(response) { // optional
+                    deferred.reject(error);
+                    });
+
+                    return deferred.promise;
+                }
     }
 })();

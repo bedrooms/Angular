@@ -14,7 +14,8 @@ function Myserv($http) {
         getInfo: getInfo,
         getpositionsOffer : getpositionsOffer,
         getAllEmployees : getAllEmployees,
-        getAllCoServices : getAllCoServices
+        getAllCoServices : getAllCoServices,
+        saveJobApplication : saveJobApplication
     };
 
         return service;
@@ -44,10 +45,8 @@ function Myserv($http) {
                 url: urlEndpoint + 'GetAllCoServices'
                         });
                     }
-            function login(name, mail, phone, state, city, resumeCV, idJobOffer) {
-                var deferred = $q.defer();
-                
-                    $http({
+            function saveJobApplication(name, mail, phone, state, city, resumeCV, idJobOffer) { 
+                   $http({
                         method: 'GET',
                         url: urlEndpoint + 'saveApplication/',
                         params:{
@@ -61,14 +60,11 @@ function Myserv($http) {
                         }
                     })
                     .then(function(response) {
-                    saveResponse = response.data.GetLoginUserAuthResult.LastSession;
-                    deferred.resolve(saveResponse);
+                    return response.data;
                     }, 
                     function(response) { // optional
-                    deferred.reject(error);
+                    return false;
                     });
-
-                    return deferred.promise;
                 }
     }
 })();

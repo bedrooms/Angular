@@ -4,17 +4,20 @@
 <!-- Form -->
 <section id="main" class="wrapper">
     <div class="container">
-    <h3>Application form [{{selectedJob.JobTitleName}}]</h3>
-    <form method="post" action="#">
+    <div ng-show="vm.applicationSuccess" >
+        application success!
+    </div>
+    <h3>Application Form <a ng-show="selectedJob.JobTitleName" >[{{selectedJob.JobTitleName}}]</a></h3>
+    <form name="jobApplicationForm">
         <div class="row uniform 50%">
             <div class="12u$">
-                <input type="text" name="name" id="name" value="" placeholder="Name" />
+                <input type="text" name="name" id="name" ng-model="vm.applicationData.name" value="" placeholder="Name" ng-required="true"  />
             </div>
             <div class="8u$ 12u$">
-                <input type="email" name="email" id="email" value="" placeholder="Email" />
+                <input type="email" name="email" id="email" ng-model="vm.applicationData.mail" value="" placeholder="Email" ng-required="true" />
             </div>
             <div class="6u$ 12u$">
-                <input type="text" name="phone" id="phone" value="" placeholder="Phone Number" />
+                <input type="text" name="phone" id="phone" ng-model="vm.applicationData.phone" value="" placeholder="Phone Number" ng-required="true" />
             </div>
             <div class="6u 12u$(2)">
                 <div class="select-wrapper">
@@ -24,22 +27,21 @@
                 </div>
             </div>
             <div class="6u 12u$(2)">
-                 <select name="city" id="city">
+                 <select name="city" id="city" ng-model="selectedItemCity">
                     <option value="">- City -</option>
-                    <option ng-repeat="c in vm.filterCities" value="{{c.rank}}">{{c.city}}</option>
+                    <option ng-repeat="c in vm.filterCities" value="{{c.city}}">{{c.city}}</option>
                 </select>
             </div>
-
             <div class="6u$ 12u$(3)">
                 <input type="checkbox" ng-model="checked" id="human" name="human" checked>
                 <label for="human">I am a human and not a robot</label>
             </div>
             <div class="12u$">
-                <textarea name="message" id="message" placeholder="Copy your resume (optional)" rows="6"></textarea>
+                <textarea name="message" id="message" ng-model="vm.applicationData.resumeCV" placeholder="Copy your resume (optional)" rows="6"></textarea>
             </div>
             <div class="12u$">
                 <ul class="actions">
-                    <li><input type="submit" ng-disabled="!checked" value="Send Message" class="special" /></li>
+                    <li><input type="submit" ng-disabled="!checked" value="Send Application" class="special" ng-click="jobApplicationForm.$valid && vm.saveApplication(selectedJob.Id)"/></li>
                     <li><input type="reset" value="Reset" /></li>                   
                     <a ui-sref="Jobs" class="button alt">Cancel</a>
                 </ul>

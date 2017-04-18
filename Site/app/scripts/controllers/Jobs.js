@@ -32,6 +32,8 @@ app.controller('JobsCtrl',['$rootScope','Myserv','$location', '$uibModal', funct
     $rootScope.modalInstance.close();
   };
 
+  
+
 
 }]);
   

@@ -33,13 +33,6 @@ function login(userName, password) {
 
      return deferred.promise;
 }
-
-
-
-   
-  
-  
-
   return {
     login: login,
     getUserInfo: getUserInfo

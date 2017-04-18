@@ -8,8 +8,6 @@ app.controller('submitFormCtrl',['$scope','$http','$filter', 'Myserv' , function
         name: '',
         mail: '',
         phone : '',
-        state : '',
-        city : '',
         resumeCV : ''
   }
 
@@ -26,21 +24,26 @@ app.controller('submitFormCtrl',['$scope','$http','$filter', 'Myserv' , function
         vm.filterCities = ($filter('filter')(vm.citiesUS, {stateName: stateId}));
     };
 
-    vm.saveApplication = function(idJobOffer){
+    vm.saveApplication = function savea(idJobOffer, state, city){
         Myserv.saveJobApplication(
             vm.applicationData.name, 
             vm.applicationData.mail, 
             vm.applicationData.phone, 
-            vm.applicationData.state, 
-            vm.applicationData.city, 
+            state, 
+            city, 
             vm.applicationData.resumeCV, 
-            idJobOffer).then(function(response){
-        vm.applicationSuccess = response.data.saveJobOfferApplicationResult;
-        },
-        function(response) { // optional
-             vm.applicationSuccess = response.data.saveJobOfferApplicationResult;
-            }
-        );
+            idJobOffer)
+            .then(function(response){
+                vm.applicationSuccess = response.data.saveJobOfferApplicationResult;
+                   vm.applicationData.name = '', 
+                    vm.applicationData.mail = '', 
+                    vm.applicationData.phone = '', 
+                    vm.applicationData.resumeCV = ''
+                }, 
+                function(response) { // optional
+                vm.applicationNotSuccess = true;
+                }
+                );
   }
 
 

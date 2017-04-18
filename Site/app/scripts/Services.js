@@ -45,8 +45,8 @@ function Myserv($http) {
                 url: urlEndpoint + 'GetAllCoServices'
                         });
                     }
-            function saveJobApplication(name, mail, phone, state, city, resumeCV, idJobOffer) { 
-                   $http({
+            function saveJobApplication(name, mail, phone, state, city, resumeCV, idJobOffer) {       
+                   return $http({
                         method: 'GET',
                         url: urlEndpoint + 'saveApplication/',
                         params:{
@@ -58,13 +58,8 @@ function Myserv($http) {
                             resumeCV : resumeCV,
                             idJobOffer : idJobOffer
                         }
-                    })
-                    .then(function(response) {
-                    return response.data;
-                    }, 
-                    function(response) { // optional
-                    return false;
                     });
+
                 }
     }
 })();

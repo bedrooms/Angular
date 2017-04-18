@@ -4,8 +4,13 @@
 <!-- Form -->
 <section id="main" class="wrapper">
     <div class="container">
-    <div ng-show="vm.applicationSuccess" >
-        application success!
+    <div class="alert alert-success" ng-show="vm.applicationSuccess" >
+        <a ui-sref="Jobs" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        <strong>Success!</strong> Your application for this possition has been send, thank you.
+    </div>
+    <div class="alert alert-danger" ng-show="vm.applicationNotSuccess" >
+        <a class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        <strong>Application submit error!</strong> please try again later.
     </div>
     <h3>Application Form <a ng-show="selectedJob.JobTitleName" >[{{selectedJob.JobTitleName}}]</a></h3>
     <form name="jobApplicationForm">

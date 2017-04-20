@@ -1,67 +1,71 @@
-    <div>
-        &nbsp;
-    </div>
-    <!-- Main -->
-    <section id="main" class="wrapper">
-        <div class="container">
-            <header class="major">
-                <h2>Jobs we offer</h2>
-                <p>Find the job that you have been waiting with just a simple search.</p>
-            </header>
-            <section>                              
-                <div ng-show="vm.jobs.length" class="table-wrapper" >                   
-                    <table >
-                        <thead>
-                            <tr>
-                                <th>Job Title</th>
-                                <th>Description</th>
-                                <th></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr ng-repeat="au in vm.jobs">    
-                                                       
-                                <td ng-model="data.model">{{au.JobTitleName}}</td>
-                                <td>{{au.Responsabilies}}</td>
-                                <td>
-                                    <a class="button small" ng-click="vm.open($index)">More...</a>
-                                </td>                               
-                            </tr>
-                            
-                        </tbody>                      
-                    </table>
-                </div>  
-                <li ng-show="!vm.jobs.length">No jobs available!</li>    
-            </section>
-        </div>
-    </section>
-    <!-- Modal -->
-    <div class="modal fade" id="myModal" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-         <div class="vertical-alignment-helper">
-        <div class="modal-dialog vertical-align-center">
-        <!-- Modal content-->
-        
-        <div class="modal-content-dialog">
-            <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
-            <h4 class="modal-title">{{selectedJob.JobTitleName}}</h4>
-            </div>
-            <div class="modal-body">
-            <h1>Resposabilities:</h1>
-            <p>{{selectedJob.Responsabilies}}</p>
-            <h1>Experience:</h1>
-            <p>{{selectedJob.Experience}}</p>
-             <h1>Industry:</h1>
-            <p>{{selectedJob.Industry}}</p>
-             <h1>Employment Type:</h1>
-            <p>{{selectedJob.EmploymentTypeName}}</p>
-            </div>
-            <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.redirectSubmit()">Apply</button>
-            </div>
-      
-         </div>
-          </div>
+<div>
+    &nbsp;
+</div>
+<!-- Main -->
+<section id="main" class="wrapper">
+    <div class="container">
+        <header class="major">
+            <h2>Jobs we offer</h2>
+            <p>Find the job that you have been waiting with just a simple search.</p>
+        </header>
+        <section>
 
-        </div>
+            <div ng-show="vm.jobs.length" class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Job Title</th>
+                            <th>Description</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="au in vm.jobs">
+
+                            <td ng-model="data.model">{{au.JobTitleName}}</td>
+                            <td>{{au.Responsabilies}}</td>
+                            <td>
+                                <a class="button small" ng-click="vm.open($index)">More...</a>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+            <div class="alert alert-info" ng-hide="vm.jobs.length">
+                <a ui-sref="Jobs" class="close" data-dismiss="alert" aria-label="close">&times;</a> 
+                There are not open positions at this moment. Thanks for your interest!.
+            </div>
+        </section>
     </div>
+</section>
+<!-- Modal -->
+<div class="modal fade" id="myModal" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="vertical-alignment-helper">
+        <div class="modal-dialog vertical-align-center">
+            <!-- Modal content-->
+
+            <div class="modal-content-dialog">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">{{selectedJob.JobTitleName}}</h4>
+                </div>
+                <div class="modal-body">
+                    <h1>Resposabilities:</h1>
+                    <p>{{selectedJob.Responsabilies}}</p>
+                    <h1>Experience:</h1>
+                    <p>{{selectedJob.Experience}}</p>
+                    <h1>Industry:</h1>
+                    <p>{{selectedJob.Industry}}</p>
+                    <h1>Employment Type:</h1>
+                    <p>{{selectedJob.EmploymentTypeName}}</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.redirectSubmit()">Apply</button>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>

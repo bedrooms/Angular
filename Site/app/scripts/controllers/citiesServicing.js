@@ -3,7 +3,7 @@ var app = angular.module('testAngularSiteApp', '');
 app.controller('citiesServicingCtrl', function (NgMap) {
     var vm = this;
 
-    vm.googleMapsUrl = "https://maps.googleapis.com/maps/api/js?key=AIzaSyA0xCoTLYO_cu9-hMIGlcuLLcVnIzps7tY";
+    vm.googleMapsUrl = "https://maps.googleapis.com/maps/api/js?key=AIzaSyC4QNL4MDtqCb0ZYZ2bmr_CAdpbhTKh628";
 
     NgMap.getMap().then(function (map) {
         console.log(map.getCenter());
